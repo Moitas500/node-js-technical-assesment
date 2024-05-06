@@ -2,11 +2,11 @@ import { GenresRepository } from "../../core/repositories/genres.repository.js"
 
 export const getGenres = async(req, res) => {
     try {
-        const response = await GenresRepository.listPersons()
+        const response = await GenresRepository.listGenres()
         res.status(200).json(response)
     } catch (error) {
         res.status(500).json({
-            message: 'Internal error'
+            message: error
         })
     }
 }

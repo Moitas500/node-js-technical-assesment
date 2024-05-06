@@ -2,11 +2,11 @@ import { BooksRepository } from "../../core/repositories/books.repository.js"
 
 export const getBooks = async(req, res) => {
     try {
-        const response = await BooksRepository.listPersons()
+        const response = await BooksRepository.listBooks()
         res.status(200).json(response)
     } catch (error) {
         res.status(500).json({
-            message: 'Internal error'
+            message: error
         })
     }
 }
