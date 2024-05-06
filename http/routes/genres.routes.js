@@ -1,16 +1,19 @@
 import express from 'express'
-import { getGenres } from '../controllers/genres.controller.js'
+import { 
+    createGenre, 
+    deleteGenre, 
+    getGenres, 
+    updateGenre
+} from '../controllers/genres.controller.js'
 
 const router = express.Router()
 
 router.get('/Genres', getGenres)
 
-router.post('/Genres')
+router.post('/Genres', createGenre)
 
-router.get('/Genres/:id')
+router.put('/Genres/:id', updateGenre)
 
-router.put('/Genres/:id')
-
-router.delete('/Genres/:id')
+router.delete('/Genres/:id', deleteGenre)
 
 export default router
